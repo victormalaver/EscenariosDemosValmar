@@ -1,0 +1,45 @@
+{
+  "ProjectName": "Valmar Demos 1.0",
+  "ProjectGuid": "e41d8680-f3e9-4f6b-9a28-3c600cd20a5b",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.ValmarDemos10",
+  "DisplayName": "Valmar Demos 1.0",
+  "Author": "",
+  "Description": "Valmar Demos 1.0",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.7.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{aa2c6dae-999e-49ee-a5ea-0c448a8ba6fa}",
+  "WP8ProductID": "{430b5c7c-5dd3-4c12-8c28-e5b81503d3e6}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.ValmarDemos10",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
