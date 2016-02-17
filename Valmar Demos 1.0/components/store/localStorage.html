@@ -7,24 +7,48 @@
             <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
         </div>
     </div>
-    <div data-role="listview" data-style="inset">
-        <div class="input-area ch50">
-            <div class="desc">Insert Variable</div>
-            <input id="variableNameInput" class="inputBox" type="text" placeholder="Enter the variable name" />
-            <input id="valueInput" class="inputBox" placeholder="Enter the variable value" />
-            <button class="button dh" id="insertVariable">Insert Record</button>
-            <button class="button dh" id="clearLocalStorage">Clear Local Storage</button>
-        </div>
-        <div class="input-area ch50">
-            <div class="desc">Search or remove variable</div>
-            <input id="getRemoveVariableNameInput" class="inputBox" type="text" placeholder="Enter name to search for a variable" />
-            <input id="result" class="inputBox" readonly="readonly" placeholder="Result">
-            <button class="button dh" id="searchVariable">Search</button>
-            <button class="button dh" id="removeVariable">Remove</button>
-        </div>
-    </div>
-    <footer class="footer">
+    <div>
+        <form>
+            <div>
+                <ul data-role="listview" data-style="inset">
+                    <h3>Insertar Variable</h3>
+                    <li>
+                        <label>Nombre de la variable:
+                            <input id="variableNameInput" type="text" placeholder="Nombre" id="Nombre">
+                        </label>
+                    </li>
+                    <li>
+                        <label>Valor de la variable:
+                            <input id="valueInput" type="text" placeholder="Valor" id="TextoIngresado">
+                        </label>
+                    </li>
+                </ul>
+                <div class="button-group button-group-vertical">
+                    <a id="insertVariable" data-role="button" class="primary">Insertar Variable</a>
+                    <a id="clearLocalStorage" data-role="button">Limpiar Local Storage</a>
+                </div>
+                <ul data-role="listview" data-style="inset">
+                    <h3>Buscar y eliminar</h3>
+                    <li>
+                        <label>Nombre de la variable:
+                            <input id="getRemoveVariableNameInput" type="text" placeholder="Nombre" id="Nombre">
+                        </label>
+                    </li>
+                    <li>
+                        <label>Valor de la variable:
+                            <input id="result" type="text" placeholder="Valor" id="TextoIngresado">
+                        </label>
+                    </li>
+                </ul>
+                <div class="button-group button-group-vertical">
+                    <a id="searchVariable" data-role="button" class="primary">Buscar</a>
+                    <a id="removeVariable" data-role="button">Eliminar</a>
+                </div>
+            </div>
+        </form>
+        <!--     </div>
+    <footer class="footer" align="center">
         <div>Cordova API Samples</div>
-    </footer>
-</div>
-<script src="components/store/localStorage.js"></script>
+    </footer> -->
+    </div>
+    <script src="components/store/localStorage.js"></script>
