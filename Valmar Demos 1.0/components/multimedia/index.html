@@ -1,0 +1,60 @@
+<div data-role="view" data-title="Multimedia" data-layout="main" data-model="app.multimedia" data-show="app.multimedia.onShow" data-after-show="app.multimedia.afterShow">
+    <!-- START_CUSTOM_CODE_multimedia -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <!-- END_CUSTOM_CODE_multimedia -->
+    <!--     <div class="content">
+        <div class="action-area ch50">
+            <button class="button dh" id="captureVideo" data-bind="events: {click: captureVideo}">Capture Video</button>
+            <button class="button dh" id="captureAudio" data-bind="events: {click: capureAudio}">Capture Audio</button>
+            <button class="button dh" id="captureImage" data-bind="events: {click: capureImage}">Capture Image</button>
+        </div>
+        <div class="result-area ch50">
+            <div class="results">
+                <div id="media"></div>
+            </div>
+            <div class="separator"></div>
+        </div>
+    </div> -->
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <a>
+                <div class="image-with-text">
+                    <h3><i class="fa fa-camera fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Captura de fotos</h3>
+                    <p>
+                        Obtiene fotos usando la cámara del móvil.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a>
+                <div class="image-with-text">
+                    <h3><i class="fa fa-microphone fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Captura de Audios</h3>
+                    <p>
+                        Obtiene audios utilizando el micrófono del móvil.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a>
+                <div class="image-with-text">
+                    <h3><i class="fa fa-film fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Captura de Videos</h3>
+                    <p>
+                        Obtiene videos utilizando la cámara del móvil.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="components/multimedia/scanner.html">
+                <div class="image-with-text">
+                    <h3><i class="fa fa-qrcode fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Scanner</h3>
+                    <p>
+                        Obtiene el texto encriptado en código de barras o QR.
+                    </p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

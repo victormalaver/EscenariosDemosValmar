@@ -1,0 +1,37 @@
+<div data-role="view" data-title="Almacenamiento" data-layout="main" data-model="app.SQLite" data-show="app.SQLite.onShow" data-after-show="app.SQLite.afterShow">
+    <!-- START_CUSTOM_CODE_SQLite -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <!-- END_CUSTOM_CODE_SQLite -->
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <a>
+                <div class="image-with-text">
+                    <h3><i class="fa fa-cloud fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Nube de telerik</h3>
+                    <p>
+                        Utiliza el backend service de telerik para almacenamiento de información (textos, imágenes, audios, geolocalización, etc).
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a  href="components/store/localStorage.html">
+                <div class="image-with-text">
+                    <h3><i class="fa fa-hdd-o fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Local Storage</h3>
+                    <p>
+                        Este ejemplo muestra cómo utilizar la API de almacenamiento local para acceder al almacenamiento local de un dispositivo y crear, buscar o eliminar elementos.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a>
+                <div class="image-with-text">
+                    <h3><i class="fa fa-database fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; SQLite</h3>
+                    <p>
+                        Crea una base de datos en la memoria interna del movil, muy funcional cuando no se trabaja con conexión a internet.
+                    </p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

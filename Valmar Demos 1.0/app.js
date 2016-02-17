@@ -1,12 +1,12 @@
 'use strict';
 
-(function() {
+(function () {
     var app = {
         data: {}
     };
 
-    var bootstrap = function() {
-        $(function() {
+    var bootstrap = function () {
+        $(function () {
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 transition: 'slide',
                 skin: 'flat',
@@ -16,11 +16,25 @@
     };
 
     if (window.cordova) {
-        document.addEventListener('deviceready', function() {
+        document.addEventListener('deviceready', function () {
             if (navigator && navigator.splashscreen) {
                 navigator.splashscreen.hide();
-            }
 
+                app.changeSkin = function (e) {
+                    console.log(e.sender.element.text());
+                    var mobileSkin = "";
+
+                    if (e.sender.element.text() === "Flat") {
+                        e.sender.element.text("Native");
+                        mobileSkin = "flat";
+                    } else {
+                        e.sender.element.text("Flat");
+                        mobileSkin = "";
+                    }
+
+                    app.mobileApp.skin(mobileSkin);
+                };
+            }
             bootstrap();
         }, false);
     } else {
@@ -35,7 +49,7 @@
 
     window.app = app;
 
-    app.isOnline = function() {
+    app.isOnline = function () {
         if (!navigator || !navigator.connection) {
             return true;
         } else {

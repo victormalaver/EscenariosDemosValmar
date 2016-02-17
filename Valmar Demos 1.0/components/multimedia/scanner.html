@@ -1,0 +1,31 @@
+<div data-role="view" data-title="Scanner" data-layout="main" data-model="app.scanner" data-show="app.scanner.onShow" data-after-show="app.scanner.afterShow">
+    <!-- START_CUSTOM_CODE_scanner -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <!-- END_CUSTOM_CODE_scanner -->
+    <div data-role="header">
+        <div data-role="navbar">
+            <!--             <a data-role="button" data-icon="favorites" data-align="right" href="">Button</a> -->
+            <span data-role="view-title">NavBar</span>
+            <a data-role="backbutton" data-align="left">Atras</a>
+            <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
+        </div>
+    </div>
+    </br>
+    <p class="text-muted">Funcionalidad para escanear códigos de barras y QR</p>
+    <div class="demo" data-role="listview" data-style="inset">
+        <div class="action-area ch40" align="center">
+            <h1><i class="fa fa-barcode fa-5x"></i>
+            </br>
+            <i class="fa fa-qrcode fa-5x"></i></h1>
+            </br>
+            <button data-role="button" class="button dh dw" id="scanButton" aling="center">Scanear Código</button>
+        </div>
+        <div class="result-area ch60">
+            <div class="results">
+                <div id="result" class="desc"></div>
+            </div>
+            <div class="separator"></div>
+        </div>
+    </div>
+</div>
+<script src="components/multimedia/scanner.js"></script>

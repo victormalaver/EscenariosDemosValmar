@@ -1,0 +1,35 @@
+<div data-role="view" data-title="Edit" data-model="app.editableListView.editItemViewModel" data-bind="events: { show: onShow }" id="editableListViewModelEditItemView">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <span data-bind="text: currentItem.Text" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center; display: block; margin-left: 70px; margin-right: 70px;" data-role="view-title"></span>
+            <a data-role="backbutton" data-align="left">Cancel</a>
+            <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
+        </div>
+    </header>
+    <!-- START_CUSTOM_CODE_editableListViewModel -->
+    <!-- END_CUSTOM_CODE_editableListViewModel -->
+    <div id="editableListForm11" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Label
+                        <select data-bind="value: editFormData.dropdownlist1" data-role="dropdownlist">
+                            <option value="First Option">First Option</option>
+                            <option value="Second Option">Second Option</option>
+                            <option value="Third Option">Third Option</option>
+                        </select>
+                    </label>
+                </li>
+                <li>
+
+                    <label>Username
+                        <input id="username1" data-bind="value: editFormData.username1" type="text">
+                    </label>
+
+                </li>
+            </ul>
+        </form>
+        <!-- START_CUSTOM_CODE_editableListForm11 -->
+        <!-- END_CUSTOM_CODE_editableListForm11 -->
+    </div>
+</div>

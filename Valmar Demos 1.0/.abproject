@@ -1,11 +1,11 @@
 {
   "ProjectName": "Valmar Demos 1.0",
-  "ProjectGuid": "e41d8680-f3e9-4f6b-9a28-3c600cd20a5b",
+  "ProjectGuid": "69aaab10-3d72-41c2-9db9-36a0dec65459",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.ValmarDemos10",
-  "DisplayName": "Valmar Demos 1.0",
+  "AppIdentifier": "com.telerik.Probadelanavegacion",
+  "DisplayName": "Proba de la navegacion",
   "Author": "",
-  "Description": "Valmar Demos 1.0",
+  "Description": "Proba de la navegacion",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -32,10 +32,10 @@
     "ID_CAP_WEBBROWSERCOMPONENT"
   ],
   "WP8Requirements": [],
-  "WP8PublisherID": "{aa2c6dae-999e-49ee-a5ea-0c448a8ba6fa}",
-  "WP8ProductID": "{430b5c7c-5dd3-4c12-8c28-e5b81503d3e6}",
+  "WP8PublisherID": "{04476574-f672-44ae-b98a-d5b666133523}",
+  "WP8ProductID": "{197194ef-6f42-43e7-b670-62c0d16876bc}",
   "WPSdk": "8.0",
-  "WP8PackageIdentityName": "1234Telerik.ValmarDemos10",
+  "WP8PackageIdentityName": "1234Telerik.Probadelanavegacion",
   "WP8WindowsPublisherName": "CN=Telerik",
   "WP8SupportedResolutions": [
     "ID_RESOLUTION_WVGA",

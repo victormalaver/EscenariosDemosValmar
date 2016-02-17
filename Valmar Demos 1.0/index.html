@@ -6,46 +6,66 @@
     <meta charset="utf-8">
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="app.js"></script>
+    <script src="bower_components/everlive/min/everlive.all.min.js"></script>
+    <script src="dataProviders/probaDeLaNavegacion.js"></script>
+    <!--     add FontAwesome -->
+    <link rel="stylesheet" href="styles/font-awesome-4.5.0/css/font-awesome.min.css">
 </head>
 
 <body id="kendoUiMobileApp">
+    <script src="components/store/index.js"></script>
+    <script src="components/editableListView/index.js"></script>
     <script src="components/home/index.js"></script>
+    <!--     . -->
+    <script src="components/firma/index.js"></script>
+    <script src="components/scanner/index.js"></script>
+    <script src="components/elearning/index.js"></script>
+    <script src="components/nfc/index.js"></script>
+    <script src="components/multimedia/index.js"></script>
+    <script src="components/georeferencia/index.js"></script>
+    <script src="components/inicio/index.js"></script>
+    <script src="components/internet/index.js"></script>
     <div data-role="layout" data-id="main">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
+                <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
             </div>
         </header>
-
         <!-- application views will be rendered here -->
-
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
-                <a href="components/home/view.html" data-icon="home">Home View</a>
+                <a href="components/home/view.html" data-icon="home">Inicio</a>
+                <a href="components/editableListView/view.html" data-icon="bookmarks">Categorías</a>
+                <a href="components/store/index.html" data-icon="mostrecent">Store</a>
+                <!--                 . -->
+                <a href="components/inicio/index.html" data-icon="home">Inicio</a>
+                <a href="components/georeferencia/index.html" data-icon="globe">Georef</a>
+                <a href="components/multimedia/index.html" data-icon="play">Media</a>
+                <a href="components/nfc/index.html" data-icon="share">NFC</a>
+                <a href="components/elearning/index.html" data-icon="bookmarks">Elear</a>
+                <a href="components/scanner/index.html" data-icon="camera">Scan</a>
+                <a href="components/firma/index.html" data-icon="edit">Firma</a>
+                <a href="components/internet/index.html" data-icon="info">internet</a>
             </div>
         </footer>
     </div>
-
     <div data-role="layout" data-id="main-nonav">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
             </div>
         </header>
-
         <!-- application views will be rendered here -->
-
         <footer data-role="footer">
         </footer>
     </div>
     <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
     <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
 </body>
 
