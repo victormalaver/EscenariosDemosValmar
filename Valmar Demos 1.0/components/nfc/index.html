@@ -1,9 +1,68 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-    </body>
-</html>
+<div data-role="view" data-title="NFC" data-layout="main" data-model="app.nfc" data-show="app.nfc.onShow" data-after-show="app.nfc.afterShow">
+    <!-- START_CUSTOM_CODE_nfc -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <!-- END_CUSTOM_CODE_nfc -->
+    <div class="demo">
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <div class="image-with-text">
+                    <h3><i class="fa fa-mixcloud fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Comprobar disponibilidad</h3>
+                    <p>
+                        Sólo para Android. El mensaje de respuesta de error es NO_NFC (sin soporte de hardware ) o NFC_DISABLED ( compatible, pero desactivado) .
+                    </p>
+                    <div align="center">
+                        <button data-role="button" class="button" data-bind="click: checkNfcEnabled" align="center">NFC habilitado?</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="image-with-text">
+                    <h3><i class="fa fa-sign-in fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Lectura</h3>
+                    <p>
+                        Lectura
+                    </p>
+                    <div class="button-group">
+                        <a data-role="button" data-bind="click: stopListening">No escuchar</a>
+                        <a class="primary" data-role="button" data-bind="click: startListening">Escuchar</a>
+                    </div>
+                    <div id="output"></div>
+                </div>
+            </li>
+            <li>
+                <div class="image-with-text">
+                    <h3><i class="fa fa-pencil fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Escritura</h3>
+                    <p>
+                        Acerque a un receptor NFC y pulse el botón.
+                    </p>
+                    <form>
+                        <div class="km-listview-wrapper">
+                            <ul class="form-content km-widget km-listview km-list km-listinset" data-role="listview" data-style="inset">
+                                <li>
+                                    <label>Escriba en el NFC:
+                                        <input data-bind="value: homeModel.fields.textooo" type="text" placeholder="Hello Valmar" id="TextoIngresado">
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                    <div align="center">
+                        <button data-role="button" data-bind="click: write"><i class="fa fa-floppy-o"></i> Grabar</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="image-with-text">
+                    <h3><i class="fa fa-share-alt fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Compartir</h3>
+                    <p>
+                        Sincronizar un dispositivo receptor NFC contra la el tuyo.
+                        <br/> En Windows Phone primero pulse el botón de escritura.
+                    </p>
+                    <div class="button-group">
+                        <a data-role="button" data-bind="click: stopSharing">No compartir</a>
+                        <a class="primary" data-role="button" data-bind="click: startSharing">Compartir</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

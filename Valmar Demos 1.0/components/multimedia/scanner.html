@@ -12,20 +12,22 @@
     </div>
     </br>
     <p class="text-muted">Funcionalidad para escanear códigos de barras y QR</p>
-    <div class="demo" data-role="listview" data-style="inset">
-        <div class="action-area ch40" align="center">
+    <div data-role="listview" data-style="inset">
+        <div align="center">
             <h1><i class="fa fa-barcode fa-5x"></i>
             </br>
             <i class="fa fa-qrcode fa-5x"></i></h1>
             </br>
-            <button data-role="button" class="button dh dw" id="scanButton" aling="center">Scanear Código</button>
         </div>
-        <div class="result-area ch60">
-            <div class="results">
+        <div>
+            <div>
                 <div id="result" class="desc"></div>
             </div>
-            <div class="separator"></div>
+            <div></div>
         </div>
+    </div>
+    <div class="button-group button-group-vertical">
+        <a id="scanButton" data-role="button" class="primary">Scannear QR o Código de Barras</a>
     </div>
 </div>
 <script src="components/multimedia/scanner.js"></script>

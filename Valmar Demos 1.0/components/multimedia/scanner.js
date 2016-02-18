@@ -1,42 +1,16 @@
 'use strict';
 
 app.scanner = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
-});
-
-// START_CUSTOM_CODE_scanner
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
-// END_CUSTOM_CODE_scanner
-
-
-console.log(111111111111);
-
-function onDeviceReady() {
-    navigator.splashscreen.hide();
-    var app = new App();
-    app.run();
-}
-
-function App() {
-}
-
-App.prototype = {
-    resultsField: null,
-     
-    run: function() {
-        var that = this,
+    onShow: function () {
+        // debugger
+        var model = this.model, //here, 'this' is the view instance
         scanButton = document.getElementById("scanButton");
         
-        that.resultsField = document.getElementById("result");
+        model.resultsField = document.getElementById("result");
         
-        scanButton.addEventListener("click",
-                                    function() { 
-                                        that._scan.call(that); 
-                                    });
+        scanButton.addEventListener("click", model._scan);
     },
-    
+    afterShow: function() {}, 
     _scan: function() {
         var that = this;
         if (window.navigator.simulator === true) {
@@ -56,9 +30,16 @@ App.prototype = {
     },
 
     _addMessageToLog: function(message) {
+        alert(message);
         var that = this,
         currentMessage = that.resultsField.innerHTML;
         
         that.resultsField.innerHTML = currentMessage + message + '<br />'; 
     }
-}
+});
+
+// START_CUSTOM_CODE_scanner
+// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
+
+// END_CUSTOM_CODE_scanner
+
