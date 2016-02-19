@@ -1,9 +1,22 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-    </body>
-</html>
+<div data-role="view" data-title="Internet" data-layout="main" data-model="app.internet" data-show="app.internet.onShow" data-after-show="app.internet.afterShow">
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <a id="aTest">
+                Iniciar Test
+            </a>
+            <input type="checkbox" data-role="switch" data-change="getSpeedInternet">
+        </li>
+        <li>
+            <div>
+                <h1 id="progressHeader" align="center">Stopped</h1>
+                <h3 id="progressResult"></h3>
+            </div>
+            <div data-role="listview" data-style="inset" id="testRespuesta" style="display:none;">
+                <div align="center">
+                    <h1><i class="fa fa-circle-o-notch fa-spin fa-5x"></i>
+               </div>
+    </div>
+        </li>
+    </ul>
+    
+</div>

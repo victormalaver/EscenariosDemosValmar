@@ -1,8 +1,8 @@
 'use strict';
 
 app.nfc = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
+    onShow: function () {},
+    afterShow: function () {}
 });
 
 // START_CUSTOM_CODE_nfc
@@ -15,11 +15,11 @@ app.nfc = kendo.observable({
         app = global.app = global.app || {};
 
     var isListening = false;
-    
+
     DemoViewModel = kendo.data.ObservableObject.extend({
 
         appendOutput: function (what) {
-			      var outputDiv = document.querySelector('#output');
+            var outputDiv = document.querySelector('#output');
             outputDiv.innerHTML = what;
         },
 
@@ -27,8 +27,8 @@ app.nfc = kendo.observable({
             var tag = nfcEvent.tag;
             var ndefMessage = tag.ndefMessage;
             var nfcResult = "";
-            for (var i=0; i < ndefMessage.length; i++) {
-                if (i>0) {
+            for (var i = 0; i < ndefMessage.length; i++) {
+                if (i > 0) {
                     nfcResult += "<br/>";
                 }
                 var payload = nfc.bytesToString(ndefMessage[i].payload);
@@ -46,9 +46,9 @@ app.nfc = kendo.observable({
                 if (isListening) {
                     alert("Already listening");
                 } else {
-	                isListening = true;
+                    isListening = true;
                     // in production you probably want to wire up this listener when Cordova's deviceready event fires
-                    nfc.addNdefListener (
+                    nfc.addNdefListener(
                         app.demoService.viewModel.nfcHandler,
                         function () { // success callback
                             app.demoService.viewModel.appendOutput("You can now scan a tag.");
@@ -66,14 +66,14 @@ app.nfc = kendo.observable({
                 if (!isListening) {
                     alert("Wasn't listening");
                 } else {
-	                isListening = false;
+                    isListening = false;
                     nfc.removeNdefListener(
                         app.demoService.viewModel.nfcHandler,
                         function () { // success callback
                             app.demoService.viewModel.appendOutput("Stopped listening.");
                         },
                         function (error) { // error callback
-                            app.demoService.viewModel.appendOutput("Error: " + + JSON.stringify(error));
+                            app.demoService.viewModel.appendOutput("Error: " + +JSON.stringify(error));
                         }
                     );
                 }
@@ -121,13 +121,17 @@ app.nfc = kendo.observable({
         checkNfcEnabled: function () {
             if (!this.checkSimulator()) {
                 nfc.enabled(
-                    function() {alert('yes!')},
-                    function(msg) {alert(msg)}
+                    function () {
+                        alert('yes!')
+                    },
+                    function (msg) {
+                        alert(msg)
+                    }
                 );
             }
         },
 
-        checkSimulator: function() {
+        checkSimulator: function () {
             if (window.navigator.simulator === true) {
                 alert('This plugin is not available in the simulator.');
                 return true;
@@ -140,16 +144,15 @@ app.nfc = kendo.observable({
         },
 
         // callbacks
-        onSuccess: function(msg) {
+        onSuccess: function (msg) {
             alert('NFC function success: ' + msg);
         },
 
-        onError: function(msg) {
+        onError: function (msg) {
             alert('NFC function error: ' + msg);
         }
     });
-
-    app.demoService = {
+    app.nfc = {
         viewModel: new DemoViewModel()
     };
 })(window);

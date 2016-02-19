@@ -2,17 +2,16 @@
 
 app.scanner = kendo.observable({
     onShow: function () {
-        // debugger
         var model = this.model, //here, 'this' is the view instance
         scanButton = document.getElementById("scanButton");
         
-        model.resultsField = document.getElementById("result");
+        model.resultsField = document.getElementById("resultScan");
         
-        scanButton.addEventListener("click", model._scan);
+        scanButton.addEventListener("click", model.scan);
     },
     afterShow: function() {}, 
-    _scan: function() {
-        var that = this;
+    scan: function () {
+
         if (window.navigator.simulator === true) {
             alert("Not Supported in Simulator.");
         }
@@ -20,7 +19,7 @@ app.scanner = kendo.observable({
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
                     if (!result.cancelled) {
-                        that._addMessageToLog(result.format + " | " + result.text);    
+                        app.scanner.addMessageToLog(result.format + " | " + result.text);
                     }
                 }, 
                 function(error) {
@@ -29,12 +28,11 @@ app.scanner = kendo.observable({
         }
     },
 
-    _addMessageToLog: function(message) {
-        alert(message);
-        var that = this,
-        currentMessage = that.resultsField.innerHTML;
-        
-        that.resultsField.innerHTML = currentMessage + message + '<br />'; 
+    addMessageToLog: function(message) {
+        var resultScan = document.getElementById("resultScan");
+        resultScan.innerHTML += '<li>Captura tomada! Su ruta es: ' + message + '</li>'
+        // that.resultsField.innerHTML = '</li>'+currentMessage + message + '</li>'; 
+        // $("#resultScan").text(message);
     }
 });
 

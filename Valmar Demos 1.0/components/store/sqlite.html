@@ -1,0 +1,53 @@
+<div data-role="view" data-title="Sqlite" data-layout="main" data-model="app.sqlite" data-show="app.sqlite.onShow" data-after-show="app.sqlite.afterShow">
+    <div data-role="header">
+        <div data-role="navbar">
+            <!--             <a data-role="button" data-icon="favorites" data-align="right" href="">Button</a> -->
+            <span data-role="view-title">NavBar</span>
+            <a data-role="backbutton" data-align="left">Atras</a>
+            <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
+        </div>
+    </div>
+    <div>
+        <form>
+            <div>
+                <ul data-role="listview" data-style="inset">
+                    <h3>Insertar Variable</h3>
+                    <li>
+                        <label>Nombre de la variable:
+                            <input id="textSqlite" type="text" placeholder="Nombre" id="Nombre">
+                        </label>
+                    </li>
+                    <!--                     <li>
+                        <label>Valor de la variable:
+                            <input id="valueInput" type="text" placeholder="Valor" id="TextoIngresado">
+                        </label>
+                    </li> -->
+                </ul>
+                <div class="button-group button-group-vertical">
+                    <a onclick="addTodo( $('#textSqlite').val() ); return false;" data-role="button" class="primary">Insertar Variable</a>
+                </div>
+            </div>
+        </form>
+        <ul data-role="listview" data-style="inset" id="todoItems">
+        </ul>
+    </div>
+    <!-- <footer class="footer" align="center">
+        <div>Cordova API Samples</div>
+    </footer> -->
+</div>
+<!-- <div class="content">
+    <div class="input-area ch30">
+        <input class="inputBox" type="text" id="todo" placeholder="Add New Item" />
+        <button class="button" id="addButton" onclick="addTodo( $('#todo').val() ); return false;">Add</button>
+        <div class="button-group button-group-vertical">
+            <a id="addsqlite" data-role="button" class="primary">add</a>
+        </div>
+    </div>
+    <div class="result-area ch70">
+        <div class="results">
+            <div class="desc">Todo List:</div>
+            <ul id="todoItems"></ul>
+        </div>
+        <div class="separator"></div>
+    </div>
+</div> -->

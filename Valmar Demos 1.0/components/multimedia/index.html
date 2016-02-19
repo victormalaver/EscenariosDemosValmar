@@ -2,22 +2,16 @@
     <!-- START_CUSTOM_CODE_multimedia -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
     <!-- END_CUSTOM_CODE_multimedia -->
-    </br></br></br></br></br>
-    <div class="content">
-        <div class="action-area ch50">
-            <button class="button dh" id="captureVideo">Capture Video</button>
-            <button class="button dh" id="captureAudio">Capture Audio</button>
-            <button class="button dh" id="captureImage">Capture Image</button>
+    <div data-role="header">
+        <div data-role="navbar">
+            <!--             <a data-role="button" data-icon="favorites" data-align="right" href="">Button</a> -->
+            <span data-role="view-title">NavBar</span>
+            <a data-role="backbutton" data-align="left">Atras</a>
+            <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
         </div>
-        <div class="result-area ch50">
-            <div class="results">
-                <div id="media"></div>
-            </div>
-            <div class="separator"></div>
-        </div>
-    </div> 
+    </div>
     <ul data-role="listview" data-style="inset">
-<!--         <li>
+        <li id="captureImage">
             <a>
                 <div class="image-with-text">
                     <h3><i class="fa fa-camera fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Captura de fotos</h3>
@@ -27,7 +21,7 @@
                 </div>
             </a>
         </li>
-        <li>
+        <li id="captureAudio">
             <a>
                 <div class="image-with-text">
                     <h3><i class="fa fa-microphone fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Captura de Audios</h3>
@@ -37,7 +31,7 @@
                 </div>
             </a>
         </li>
-        <li>
+        <li id="captureVideo">
             <a>
                 <div class="image-with-text">
                     <h3><i class="fa fa-film fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Captura de Videos</h3>
@@ -46,7 +40,7 @@
                     </p>
                 </div>
             </a>
-        </li> -->
+        </li>
         <li>
             <a href="components/multimedia/scanner.html">
                 <div class="image-with-text">
@@ -57,5 +51,8 @@
                 </div>
             </a>
         </li>
+    </ul>
+    <ul data-role="listview" data-style="inset" id="media">
+        
     </ul>
 </div>

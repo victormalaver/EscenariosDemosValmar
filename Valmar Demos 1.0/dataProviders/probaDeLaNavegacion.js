@@ -3,7 +3,7 @@
 (function () {
     var provider = app.data.probaDeLaNavegacion = new Everlive({
             offlineStorage: true,
-            appId: '2o4yg2b223ykhwcf',
+            appId: 'avsmi07vv8ufu744',
             scheme: 'https',
             authentication: {
                 persist: true

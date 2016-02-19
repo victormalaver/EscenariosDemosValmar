@@ -1,9 +1,101 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-    </body>
-</html>
+<style>
+    .iframe {
+        margin: auto;
+        width: 100%;
+    }
+    .anima {
+        border: 0;
+        width: 100%;
+        height: 573px
+    }
+</style>
+<div data-role="view" id="drawer-home" data-title="E-learning" data-use-native-scrolling="true" data-layout="main">
+    <!-- <div data-role="view" id="drawer-home" data-layout="drawer-layout" data-title="E-learning" data-use-native-scrolling="true"> -->
+    <div data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">NavBar</span>
+            <a data-role="backbutton" data-align="left">Atras</a>
+            <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
+        </div>
+    </div>
+    <div class="image-with-text">
+        <img data-role="listview" src="styles/img/valmar.png" style="width:100%;">
+        
+        <h3>Bienvenidos a la plataforma de cursos en Línea de Valmar</h3>
+        <p>
+            Haga clic sobre el botón de la esquina superior izquierda para seleccionar los cursos disponibles en el sistema.
+        </p>
+    </div>
+    <div class="iframe">
+        <h1></h1>
+        <ul data-role="listview">
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <a onclick="clase('01/01.html','Introducción')">
+                        <div class="image-with-text">
+                            <h3><i class="fa fa-info fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Introducción</h3>
+                            <p>
+                                Breve descripción de esta sesión.
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="clase('02/02.html','Objetivos')">
+                        <div class="image-with-text">
+                            <h3><i class="fa fa-trophy fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Objetivos</h3>
+                            <p>
+                                Breve descripción de esta sesión.
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="clase('03/03.html','Respuesta y evacuación de emergencia')">
+                        <div class="image-with-text">
+                            <h3><i class="fa fa-bell fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Respuesta y evaluación de emergencia</h3>
+                            <p>
+                                Breve descripción de esta sesión.
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!--<iframe class="anima" src="http://54.213.238.161/app/01/01.html"> </iframe>-->
+    </div>
+</div>
+<div data-role="view" id="drawer-starred" data-layout="drawer-layout" data-title="E-learning">
+    <div data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">NavBar</span>
+            <a data-role="backbutton" data-align="left">Atras</a>
+            <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
+        </div>
+    </div>
+    <div class="iframe">
+        <div>
+            <h2 id="titulo">Titulo del la clase</h2>
+        </div>
+        <div id="animacion"></div>
+        <!--<iframe class="anima" src="http://54.213.238.161/app/02/02.html"> </iframe>-->
+    </div>
+</div>
+<div data-role="view" id="drawer-drafts" data-layout="drawer-layout" data-title="E-learning">
+    <div class="iframe">
+        <!--<iframe class="anima" src="http://54.213.238.161/app/03/03.html"> </iframe>-->
+    </div>
+</div>
+<div data-role="view" id="drawer-sent" data-layout="drawer-layout" data-title="E-learning">
+    <div class="iframe">
+        <!--<iframe class="anima" src="http://54.213.238.161/app/04/04.htm"> </iframe>-->
+    </div>
+</div>
+<div data-role="drawer" id="my-drawer" style="width: 20em" data-use-native-scrolling="true" data-title="Cursos">
+    <div data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">NavBar</span>
+            <a data-role="backbutton" data-align="left">Atras</a>
+            <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
+        </div>
+    </div>
+</div>

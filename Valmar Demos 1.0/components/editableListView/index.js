@@ -1,17 +1,17 @@
 'use strict';
 
 app.editableListView = kendo.observable({
-    onShow: function() {},
-    afterShow: function() {}
+    onShow: function () {},
+    afterShow: function () {}
 });
 
 // START_CUSTOM_CODE_editableListView
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
 // END_CUSTOM_CODE_editableListView
-(function(parent) {
+(function (parent) {
     var dataProvider = app.data.probaDeLaNavegacion,
-        processImage = function(img) {
+        processImage = function (img) {
             if (!img) {
                 var empty1x1png = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
                 img = 'data:image/png;base64,' + empty1x1png;
@@ -22,10 +22,11 @@ app.editableListView = kendo.observable({
             }
 
             return img;
+
         },
-        flattenLocationProperties = function(dataItem) {
+        flattenLocationProperties = function (dataItem) {
             var propName, propValue,
-                isLocation = function(value) {
+                isLocation = function (value) {
                     return propValue && typeof propValue === 'object' &&
                         propValue.longitude && propValue.latitude;
                 };
@@ -37,6 +38,7 @@ app.editableListView = kendo.observable({
                         dataItem[propName] =
                             kendo.format('Latitude: {0}, Longitude: {1}',
                                 propValue.latitude, propValue.longitude);
+                        
                     }
                 }
             }
@@ -48,7 +50,7 @@ app.editableListView = kendo.observable({
                 dataProvider: dataProvider
             },
 
-            change: function(e) {
+            change: function (e) {
                 var data = this.data();
                 for (var i = 0; i < data.length; i++) {
                     var dataItem = data[i];
@@ -58,8 +60,9 @@ app.editableListView = kendo.observable({
 
                     flattenLocationProperties(dataItem);
                 }
+                
             },
-            error: function(e) {
+            error: function (e) {
                 if (e.xhr) {
                     alert(JSON.stringify(e.xhr));
                 }
@@ -80,7 +83,7 @@ app.editableListView = kendo.observable({
                             defaultValue: ''
                         },
                     },
-                    icon: function() {
+                    icon: function () {
                         var i = 'globe';
                         return kendo.format('km-icon km-{0}', i);
                     }
@@ -94,28 +97,28 @@ app.editableListView = kendo.observable({
         dataSource = new kendo.data.DataSource(dataSourceOptions),
         editableListViewModel = kendo.observable({
             dataSource: dataSource,
-            itemClick: function(e) {
+            itemClick: function (e) {
                 app.mobileApp.navigate('#components/editableListView/details.html?uid=' + e.dataItem.uid);
             },
-            addClick: function() {
+            addClick: function () {
                 app.mobileApp.navigate('#components/editableListView/add.html');
             },
-            editClick: function() {
+            editClick: function () {
                 var uid = this.currentItem.uid;
                 app.mobileApp.navigate('#components/editableListView/edit.html?uid=' + uid);
             },
-            deleteClick: function() {
+            deleteClick: function () {
                 var dataSource = editableListViewModel.get('dataSource');
 
                 dataSource.remove(this.currentItem);
 
-                dataSource.one('change', function(e) {
+                dataSource.one('change', function (e) {
                     app.mobileApp.navigate('#:back');
                 });
 
                 dataSource.sync();
             },
-            detailsShow: function(e) {
+            detailsShow: function (e) {
                 var item = e.view.params.uid,
                     dataSource = editableListViewModel.get('dataSource'),
                     itemModel = dataSource.getByUid(item);
@@ -124,19 +127,20 @@ app.editableListView = kendo.observable({
                     itemModel.Text = String.fromCharCode(160);
                 }
                 editableListViewModel.set('currentItem', itemModel);
+                
             },
             currentItem: null
         });
 
     parent.set('addItemViewModel', kendo.observable({
-        onShow: function(e) {
+        onShow: function (e) {
             // Reset the form data.
             this.set('addFormData', {
                 username: '',
                 dropdownlist: '',
             });
         },
-        onSaveClick: function(e) {
+        onSaveClick: function (e) {
             var addFormData = this.get('addFormData'),
                 dataSource = editableListViewModel.get('dataSource');
 
@@ -145,7 +149,7 @@ app.editableListView = kendo.observable({
                 Location: addFormData.dropdownlist,
             });
 
-            dataSource.one('change', function(e) {
+            dataSource.one('change', function (e) {
                 app.mobileApp.navigate('#:back');
             });
 
@@ -154,7 +158,7 @@ app.editableListView = kendo.observable({
     }));
 
     parent.set('editItemViewModel', kendo.observable({
-        onShow: function(e) {
+        onShow: function (e) {
             var itemUid = e.view.params.uid,
                 dataSource = editableListViewModel.get('dataSource'),
                 itemData = dataSource.getByUid(itemUid);
@@ -165,7 +169,7 @@ app.editableListView = kendo.observable({
                 dropdownlist1: itemData.Location,
             });
         },
-        onSaveClick: function(e) {
+        onSaveClick: function (e) {
             var editFormData = this.get('editFormData'),
                 itemData = this.get('itemData'),
                 dataSource = editableListViewModel.get('dataSource');
@@ -174,7 +178,7 @@ app.editableListView = kendo.observable({
             itemData.set('Text', editFormData.username1);
             itemData.set('Location', editFormData.dropdownlist1);
 
-            dataSource.one('change', function(e) {
+            dataSource.one('change', function (e) {
                 app.mobileApp.navigate('#:back');
             });
 
