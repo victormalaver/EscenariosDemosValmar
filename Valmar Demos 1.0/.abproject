@@ -2,10 +2,10 @@
   "ProjectName": "Valmar Demos 1.0",
   "ProjectGuid": "69aaab10-3d72-41c2-9db9-36a0dec65459",
   "projectVersion": 1,
-  "AppIdentifier": "com.telerik.Probadelanavegacion",
-  "DisplayName": "Proba de la navegacion",
-  "Author": "",
-  "Description": "Proba de la navegacion",
+  "AppIdentifier": "com.valmar.demos",
+  "DisplayName": "Demos Valmar",
+  "Author": "Valmar Group",
+  "Description": "Demos",
   "BundleVersion": "1.0",
   "AndroidVersionCode": "1",
   "iOSDeviceFamily": [
@@ -14,7 +14,7 @@
   ],
   "iOSBackgroundMode": [],
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
-  "FrameworkVersion": "3.7.0",
+  "FrameworkVersion": "4.0.0",
   "AndroidPermissions": [
     "android.permission.INTERNET"
   ],
@@ -22,7 +22,7 @@
     "Portrait",
     "Landscape"
   ],
-  "AndroidHardwareAcceleration": "false",
+  "AndroidHardwareAcceleration": "True",
   "iOSStatusBarStyle": "Default",
   "Framework": "Cordova",
   "WP8TileTitle": "",

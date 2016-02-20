@@ -10,8 +10,8 @@
     <div>
         <form>
             <div>
-                <ul data-role="listview" data-style="inset">
-                    <h3>Insertar Variable</h3>
+                <h3 id="vista1" onclick="vistaLocal('contenedor1');">Insertar Variable</h3>
+                <ul data-role="listview" data-style="inset" id="contenedor1" style="display:none;">
                     <li>
                         <label>Nombre de la variable:
                             <input id="variableNameInput" type="text" placeholder="Nombre" id="Nombre">
@@ -22,13 +22,13 @@
                             <input id="valueInput" type="text" placeholder="Valor" id="TextoIngresado">
                         </label>
                     </li>
+                    <div class="button-group button-group-vertical">
+                        <a id="insertVariable" data-role="button" class="primary">Insertar Variable</a>
+                        <a id="clearLocalStorage" data-role="button">Limpiar Local Storage</a>
+                    </div>
                 </ul>
-                <div class="button-group button-group-vertical">
-                    <a id="insertVariable" data-role="button" class="primary">Insertar Variable</a>
-                    <a id="clearLocalStorage" data-role="button">Limpiar Local Storage</a>
-                </div>
-                <ul data-role="listview" data-style="inset">
-                    <h3>Buscar y eliminar</h3>
+                <h3 onclick="vistaLocal('contenedor2');">Buscar y eliminar</h3>
+                <ul data-role="listview" data-style="inset" id="contenedor2" style="display:none;">
                     <li>
                         <label>Nombre de la variable:
                             <input id="getRemoveVariableNameInput" type="text" placeholder="Nombre" id="Nombre">
@@ -39,11 +39,11 @@
                             <input id="result" type="text" placeholder="Valor" id="TextoIngresado">
                         </label>
                     </li>
+                    <div class="button-group button-group-vertical">
+                        <a id="searchVariable" data-role="button" class="primary">Buscar</a>
+                        <a id="removeVariable" data-role="button">Eliminar</a>
+                    </div>
                 </ul>
-                <div class="button-group button-group-vertical">
-                    <a id="searchVariable" data-role="button" class="primary">Buscar</a>
-                    <a id="removeVariable" data-role="button">Eliminar</a>
-                </div>
             </div>
         </form>
     </div>

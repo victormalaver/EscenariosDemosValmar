@@ -24,13 +24,27 @@
                     console.log(e.sender.element.text());
                     var mobileSkin = "";
 
-                    if (e.sender.element.text() === "Flat") {
-                        e.sender.element.text("Native");
-                        mobileSkin = "flat";
-                    } else {
-                        e.sender.element.text("Flat");
-                        mobileSkin = "";
+                    switch (e.sender.element.text()) {
+                        case "Nova":
+                            e.sender.element.text("Flat");
+                            mobileSkin = "nova";
+                            break;
+                        case "Native":
+                            e.sender.element.text("Nova");
+                            mobileSkin = "native";
+                            break;
+                        default: //case "Flat":
+                            e.sender.element.text("Native");
+                            mobileSkin = "flat";
+                            break;
                     }
+                    // if (e.sender.element.text() === "Flat") {
+                    //     e.sender.element.text("Native");
+                    //     mobileSkin = "flat";
+                    // } else {
+                    //     e.sender.element.text("Flat");
+                    //     mobileSkin = "";
+                    // }
 
                     app.mobileApp.skin(mobileSkin);
                 };
@@ -60,5 +74,14 @@
 
 // START_CUSTOM_CODE_kendoUiMobileApp
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
+
+
+function vistaLocal(contenedor) {
+    
+    $("#"+contenedor).toggle("slow", function () {
+        // Animation complete.
+    });
+}
+
 
 // END_CUSTOM_CODE_kendoUiMobileApp

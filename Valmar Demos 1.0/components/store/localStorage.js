@@ -33,7 +33,7 @@ app.localStorage = kendo.observable({
             result.value = localStorage.getItem(getRemoveVariableNameInput.value);
         } else {
             result.value = "No such record!"
-        } 
+        }
     },
 
     removeVariable: function () {
@@ -51,6 +51,7 @@ app.localStorage = kendo.observable({
         localStorage.clear();
     }
 });
+
 
 // document.addEventListener("deviceready", onDeviceReady, false);
 // onDeviceReady();
