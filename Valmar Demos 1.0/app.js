@@ -19,34 +19,31 @@
         document.addEventListener('deviceready', function () {
             if (navigator && navigator.splashscreen) {
                 navigator.splashscreen.hide();
-
                 app.changeSkin = function (e) {
                     console.log(e.sender.element.text());
                     var mobileSkin = "";
 
                     switch (e.sender.element.text()) {
                         case "Nova":
-                            e.sender.element.text("Flat");
-                            mobileSkin = "nova";
+                            e.sender.element.text("Native");
+                            mobileSkin = "";
                             break;
                         case "Native":
-                            e.sender.element.text("Nova");
-                            mobileSkin = "native";
-                            break;
-                        default: //case "Flat":
-                            e.sender.element.text("Native");
+                            e.sender.element.text("Flat");
                             mobileSkin = "flat";
                             break;
+                        default: //case "Flat":
+                            e.sender.element.text("Nova");
+                            mobileSkin = "nova";
+                            break; 
                     }
-                    // if (e.sender.element.text() === "Flat") {
-                    //     e.sender.element.text("Native");
-                    //     mobileSkin = "flat";
-                    // } else {
-                    //     e.sender.element.text("Flat");
-                    //     mobileSkin = "";
-                    // }
-
                     app.mobileApp.skin(mobileSkin);
+                    if (app.mobileApp.view().title === "Internet") {
+                        setTimeout(function () {
+                            // $("input[type='checkbox']").  
+                            app.mobileApp.view().element.find("input").data("kendoMobileSwitch").refresh();
+                        }, 200);
+                    }
                 };
             }
             bootstrap();
@@ -77,8 +74,8 @@
 
 
 function vistaLocal(contenedor) {
-    
-    $("#"+contenedor).toggle("slow", function () {
+
+    $("#" + contenedor).toggle("slow", function () {
         // Animation complete.
     });
 }

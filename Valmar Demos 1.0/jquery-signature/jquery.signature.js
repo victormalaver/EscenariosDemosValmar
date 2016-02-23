@@ -14,12 +14,12 @@ var signatureOverrides = {
 		distance: 0, // Minimum distance for a drag
 		background: '#ffffff', // Colour of the background
 		color: '#000000', // Colour of the signature
-		thickness: 2, // Thickness of the lines
-		guideline: false, // Add a guide line or not?
-		guidelineColor: '#a0a0a0', // Guide line colour
+		thickness: 0.5, // Thickness of the lines
+		guideline: true, // Add a guide line or not?
+		guidelineColor: 'tomato', // Guide line colour
 		guidelineOffset: 50, // Guide line offset from the bottom
 		guidelineIndent: 10, // Guide line indent from the edges
-		notAvailable: 'Your browser doesn\'t support signing', // Error message when no canvas
+		notAvailable: 'Su navegador no soporta la firma', //'Your browser doesn\'t support signing', // Error message when no canvas
 		syncField: null, // Selector for synchronised text field
 		change: null // Callback when signature changed
 	},
