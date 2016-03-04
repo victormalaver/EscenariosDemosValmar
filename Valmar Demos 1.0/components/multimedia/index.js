@@ -1,7 +1,7 @@
 'use strict';
 
 //document.addEventListener("deviceready", onDeviceReady, false);
- 
+
 function id(element) {
     return document.getElementById(element);
 }
@@ -15,10 +15,24 @@ app.multimedia = kendo.observable({
     pictureSource: null,
     destinationType: null,
 
+    // onShow: function () {  Esto genera doble llamda cuando no se instancio el data model 
+    //     var model = this.model; //here, 'this' is the view instance
+    //     id("captureVideo").addEventListener("click", function () {
+    //         // debugger;
+    //         model.captureVideo(arguments);
+    //     });
+    //     id("captureAudio").addEventListener("click", function () {
+    //         model.capureAudio(arguments);
+    //     });
+    //     id("captureImage").addEventListener("click", function () {
+    //         model.captureImage(arguments);
+    //     });
+    // },
+
     onShow: function () {
         var model = this.model; //here, 'this' is the view instance
+        alert('addEventListener');
         id("captureVideo").addEventListener("click", function () {
-            // debugger;
             model.captureVideo(arguments);
         });
         id("captureAudio").addEventListener("click", function () {
