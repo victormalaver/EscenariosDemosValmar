@@ -1,9 +1,37 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-    </body>
-</html>
+<div data-role="view" data-title="Georeferencia" data-layout="main" data-model="app.georeferencia" data-init="app.georeferencia.onShow" data-after-show="app.georeferencia.afterShow">
+    <!-- START_CUSTOM_CODE_multimedia -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <!-- END_CUSTOM_CODE_multimedia -->
+    <div data-role="header">
+        <div data-role="navbar">
+            <!--             <a data-role="button" data-icon="favorites" data-align="right" href="">Button</a> -->
+            <span data-role="view-title">NavBar</span>
+            <a data-role="backbutton" data-align="left">Atras</a>
+            <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
+        </div>
+    </div>
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <a href="components/georeferencia/localizacion.html">
+                <div class="image-with-text">
+                    <h3><i class="fa fa-location-arrow fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Mi localización</h3>
+                    <p>
+                        Obtiene la latitud y longitud de mi posición haciendo uso de la tecnología de Telerik Kendo Map.
+                    </p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="components/multimedia/busqueda.html">
+                <div class="image-with-text">
+                    <h3><i class="fa fa-map-marker fa-2x"></i><span class="#: data.icon() #"></span> &nbsp;&nbsp;&nbsp; Marcadores</h3>
+                    <p>
+                        Obtiene mis posiciones registradas utilizando la tecnología de Ope Street Maps y Leftlet .
+                    </p>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <ul data-role="listview" data-style="inset" id="media">
+    </ul>
+</div>
