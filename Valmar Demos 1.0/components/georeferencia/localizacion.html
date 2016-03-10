@@ -11,7 +11,23 @@
         </div>
     </div>
     </br>
-    <button onclick="cargarMapa();">cargar mapa</button>
-    <div id="map" style="width:100%;"></div>
+    <div class="content">
+        <div class="action-area ch30">
+            <button class="button dh" id="watchButton" onclick="handleWatch();">Start Geolocation Watch</button>
+            <button class="button dh" id="refreshButton" onclick="handleRefresh();">Refresh Geolocation</button>
+        </div>
+        <div class="result-area ch70">
+            <div class="results">
+                <div id="results" class="desc"></div>
+            </div>
+            <div class="separator"></div>
+        </div>
+    </div>
+    <div align="center">
+        <button data-role="button" onclick="cargarMapa();"><i class="fa  fa-location-arrow"></i> Mi posición
+            <div id="miUbicacion"></div>
+        </button>
+    </div>
+    </br>
+    <div id="mapLocalizacion" style="width:100%;"></div>
 </div>
-<script src="components/georeferencia/localizacion.js"></script>

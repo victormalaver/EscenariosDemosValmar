@@ -8,7 +8,8 @@
     <link href="styles/main.css" rel="stylesheet">
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
-    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <!--     <script src="kendo/js/kendo.mobile.min.js"></script> ESTO SE REMPLAZZA POR EL /kendo.all.min.js" -->
+<!--     <script src="kendo/js/kendo.mobile.min.js"></script> -->
     <script src="app.js"></script>
     <script src="bower_components/everlive/min/everlive.all.min.js"></script>
     <script src="dataProviders/probaDeLaNavegacion.js"></script>
@@ -22,8 +23,8 @@
     <!--     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/south-street/jquery-ui.css" rel="stylesheet"> -->
     <link href="jquery-signature/jquery-ui.css" rel="stylesheet">
     <!--[if IE]><script src="jquery-signature/excanvas.js"></script><![endif]-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+    <script src="jquery-signature/jquery.min.js"></script>
+    <script src="jquery-signature/jquery-ui.min.js"></script>
     <script src="jquery-signature/jquery.signature.js"></script>
     <script type="text/javascript" src="jquery-signature/jquery.ui.touch-punch.min.js"></script>
     <!--     END JQUERY SIGNATURE -->
@@ -49,6 +50,13 @@
     <!--     END MAPS -->
     <!--     END MAPS -->
     <!--     END MAPS -->
+    <!--     MAPA leaflet -->
+    <link rel="stylesheet" type="text/css" href="Mapa/leaflet.css">
+    <script type="text/javascript" src="Mapa/leaflet.js"></script>
+    <link rel="stylesheet" type="text/css" href="Mapa/MarkerCluster.css">
+    <script type="text/javascript" src="Mapa/leaflet.markercluster-src.js"></script>
+    <link rel="stylesheet" type="text/css" href="Mapa/MarkerCluster.Default.css">
+    <!--     END MAPA leaflet -->
 </head>
 
 <body id="kendoUiMobileApp">
@@ -64,6 +72,8 @@
     <script src="components/georeferencia/index.js"></script>
     <script src="components/internet/index.js"></script>
     <script src="components/store/sqlite.js"></script>
+    <script src="components/georeferencia/localizacion.js"></script>
+    <script src="components/georeferencia/marker.js"></script>
     <div data-role="layout" data-id="main">
         <header data-role="header">
             <div data-role="navbar">
@@ -76,8 +86,8 @@
             <div data-role="tabstrip" id="navigation-container">
                 <a href="components/home/view.html" data-icon="home">Inicio</a>
                 <!--                 <a href="components/editableListView/view.html" data-icon="bookmarks">Categorías</a> -->
-                <a href="components/georeferencia/index.html" data-icon="globe">Georef</a>
                 <a href="components/store/index.html" data-icon="mostrecent">Store</a>
+                <a href="components/georeferencia/index.html" data-icon="globe">Georef</a>
                 <!--                 . -->
                 <!--                 <a href="components/inicio/index.html" data-icon="home">Inicio</a> -->
                 <!--                 <a href="components/georeferencia/index.html" data-icon="globe">Georef</a> -->
@@ -112,4 +122,4 @@
     </div> -->
 </body>
 
-</html>
+</html> 

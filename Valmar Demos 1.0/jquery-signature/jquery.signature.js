@@ -14,7 +14,7 @@ var signatureOverrides = {
 		distance: 0, // Minimum distance for a drag
 		background: '#ffffff', // Colour of the background
 		color: '#000000', // Colour of the signature
-		thickness: 0.5, // Thickness of the lines
+		thickness: 2, // Thickness of the lines
 		guideline: true, // Add a guide line or not?
 		guidelineColor: 'tomato', // Guide line colour
 		guidelineOffset: 50, // Guide line offset from the bottom

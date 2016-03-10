@@ -31,7 +31,7 @@ app.multimedia = kendo.observable({
 
     onShow: function () {
         var model = this.model; //here, 'this' is the view instance
-        alert('addEventListener');
+        // alert('addEventListener');
         id("captureVideo").addEventListener("click", function () {
             model.captureVideo(arguments);
         });
