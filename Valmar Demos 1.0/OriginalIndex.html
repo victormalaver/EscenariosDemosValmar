@@ -57,14 +57,9 @@
     <script type="text/javascript" src="Mapa/leaflet.markercluster-src.js"></script>
     <link rel="stylesheet" type="text/css" href="Mapa/MarkerCluster.Default.css">
     <!--     END MAPA leaflet -->
-    <!--     Start MenuCircular CSS -->
-    <!--     Start MenuCircular CSS -->
-    <link rel="stylesheet" href="styles/menuCircle/circle-menu.css">
-    <!--     End Start MenuCircular CSS -->
-    <!--     End Start MenuCircular CSS -->
 </head>
 
-<body id="kendoUiMobileApp">
+<body id="kendoUiMobileApp" style="">
     <script src="components/store/index.js"></script>
     <script src="components/editableListView/index.js"></script>
     <script src="components/home/index.js"></script>
@@ -82,12 +77,27 @@
     <div data-role="layout" data-id="main">
         <header data-role="header">
             <div data-role="navbar">
-                <a data-role="backbutton" data-align="left">Back</a>
                 <span data-role="view-title"></span>
-                <a data-align="right" data-role="button" class="nav-button" href="#/">Index</a>
+                <a id="skin-change" data-role="button" data-align="right" data-click="app.changeSkin">Flat</a>
             </div>
         </header>
+        <!-- application views will be rendered here -->
         <footer data-role="footer">
+            <div data-role="tabstrip" id="navigation-container">
+                <a href="components/home/view.html" data-icon="home">Inicio</a>
+                <!--                 <a href="components/editableListView/view.html" data-icon="bookmarks">Categorías</a> -->
+                <a href="components/store/index.html" data-icon="mostrecent">Store</a>
+                <a href="components/georeferencia/index.html" data-icon="globe">Georef</a>
+                <!--                 . -->
+                <!--                 <a href="components/inicio/index.html" data-icon="home">Inicio</a> -->
+                <!--                 <a href="components/georeferencia/index.html" data-icon="globe">Georef</a> -->
+                <a href="components/multimedia/index.html" data-icon="play">Media</a>
+                <a href="components/nfc/index.html" data-icon="share">NFC</a>
+                <a href="components/elearning/index.html" data-icon="bookmarks">Elear</a>
+                <!--                 <a href="components/scanner/index.html" data-icon="camera">Scan</a> -->
+                <a href="components/firma/index.html" data-icon="edit">Firma</a>
+                <a href="components/internet/index.html" data-icon="info">internet</a>
+            </div>
         </footer>
     </div>
     <div data-role="layout" data-id="main-nonav">
@@ -96,106 +106,20 @@
                 <span data-role="view-title"></span>
             </div>
         </header>
+        <!-- application views will be rendered here -->
         <footer data-role="footer">
         </footer>
-    </div>
-    <div data-role="view" data-layout="main-nonav" data-title="Index">
-        <ul id="navigation-container" data-role="listview" data-style="inset">
-            <div class='selector'>
-                <ul>
-                    <!-- Malfunction: -->
-                    <li data-href='components/home/index.html'>
-                        <input id='c1'>
-                        <label for='c1'>Inicio</label>
-                    </li>
-                    <li data-href='components/georeferencia/index.html'>
-                        <input id='c2'>
-                        <label for='c2'>Georef</label>
-                    </li>
-                    <li data-href='components/multimedia/index.html'>
-                        <input id='c3'>
-                        <label for='c3'>Media</label>
-                    </li>
-                    <li data-href='components/nfc/index.html'>
-                        <input id='c4'>
-                        <label for='c4'>NFC</label>
-                    </li>
-                    <li data-href='components/elearning/index.html'>
-                        <input id='c5'>
-                        <label for='c5'>Elear</label>
-                    </li>
-                    <li data-href='components/firma/index.html'>
-                        <input id='c6'>
-                        <label for='c6'>Firma</label>
-                    </li>
-                    <li data-href='components/firma2/index.html'>
-                        <input id='c9'>
-                        <label for='c*'>Firma2</label>
-                    </li>
-                    <li data-href='components/firma3/full-window.html'>
-                        <input id='c10'>
-                        <label for='c*'>Firma3</label>
-                    </li>
-                    <li data-href='components/store/index.html'>
-                        <input id='c7'>
-                        <label for='c7'>Store</label>
-                    </li>
-                    <li data-href='components/internet/index.html'>
-                        <input id='c8'>
-                        <label for='c8'>Internet</label>
-                    </li>
-                </ul>
-                <button>Valmar</button>
-            </div>
-        </ul>
     </div>
     <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
     <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
-    <script>
-        var nbOptions = 8;
-        var angleStart = -360;
-
-        // jquery rotate animation
-        function rotate(li, d) {
-            $({
-                d: angleStart
-            }).animate({
-                d: d
-            }, {
-                step: function (now) {
-                    $(li)
-                        .css({
-                            transform: 'rotate(' + now + 'deg)'
-                        })
-                        .find('label')
-                        .css({
-                            transform: 'rotate(' + (-now) + 'deg)'
-                        });
-                },
-                duration: 0
-            });
-        }
-
-        // show / hide the options
-        function toggleOptions(s) {
-            $(s).toggleClass('open');
-            var li = $(s).find('li');
-            var deg = $(s).hasClass('half') ? 180 / (li.length - 1) : 360 / li.length;
-            for (var i = 0; i < li.length; i++) {
-                var d = $(s).hasClass('half') ? (i * deg) - 90 : i * deg;
-                $(s).hasClass('open') ? rotate(li[i], d) : rotate(li[i], angleStart);
-            }
-        }
-
-        $('.selector button').click(function (e) {
-            toggleOptions($(this).parent());
-        });
-
-        setTimeout(function () {
-            toggleOptions('.selector');
-        }, 1000); //@ sourceURL=pen.js
-    </script>
+    <!--     <div data-role="modalview" id="modalDialog" style="width: 300px; height: 300px">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a data-role="button" data-align="right" onclick="$('#modalDialog').data('kendoWindow').close();"><span class="k-icon k-i-undo"></a>
+        </div>
+        <div id="modalMensaje"></div>
+    </div> -->
 </body>
 
 </html>

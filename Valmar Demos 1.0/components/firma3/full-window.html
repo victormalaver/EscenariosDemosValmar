@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="components/firma3/assets/jquery.signaturepad.css">
+<!--[if lt IE 9]><script src="components/firma3/assets/flashcanvas.js"></script><![endif]-->
+<div data-role="view" data-title="Firma" data-layout="main">
+    <form method="POST" action="">
+        <canvas class="pad"></canvas>
+        <a type="reset" value="clear" data-role="button" data-icon="refresh" id="clear">Limpiar</a>
+    </form>
+    <script src="components/firma3/assets/jquery.signaturepad.js"></script>
+    <script>
+        (function (window) {
+            var $canvas,
+                onResize = function (event) {
+                    $canvas.attr({
+                        height: window.innerWidth,
+                        width: window.innerWidth
+                    });
+                };
+
+            $(document).ready(function () {
+                $canvas = $('canvas');
+                window.addEventListener('orientationchange', onResize, false);
+                window.addEventListener('resize', onResize, false);
+                onResize();
+
+                $('form').signaturePad({
+                    drawOnly: true,
+                    defaultAction: 'drawIt',
+                    validateFields: false,
+                    lineWidth: 0,
+                    output: null,
+                    sigNav: null,
+                    name: null,
+                    typed: null,
+                    clear: '#clear',
+                    typeIt: null,
+                    drawIt: null,
+                    typeItDesc: null,
+                    drawItDesc: null
+                });
+            });
+        }(this));
+    </script>
+    <script src="components/firma3/assets/json2.min.js"></script>
+</div>
